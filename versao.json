@@ -1,6 +1,6 @@
-{
-  "versao": "0.1.0",
-  "obrigatoria": false,
-  "url": "",
-  "novidades": ""
+{ 
+  "versao": "0.2.0", 
+  "obrigatoria": false, 
+  "url": "https://play.google.com/apps/testing/com.korrajogos.dungeonkaiju", 
+  "novidades": "Novos controles por toque e revive por ouro!" 
 }
