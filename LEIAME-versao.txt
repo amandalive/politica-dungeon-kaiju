@@ -1,0 +1,53 @@
+COMO AVISAR OS JOGADORES DE UMA ATUALIZACAO
+===========================================
+
+O jogo le o arquivo versao.json toda vez que abre. Se o campo "versao" for
+MAIOR que a versao instalada, aparece o popup no menu principal.
+
+PASSO A PASSO PARA AVISAR DE UMA VERSAO NOVA
+--------------------------------------------
+1. Publicar a nova versao na Play normalmente.
+2. Esperar ela ficar disponivel para download (nao adianta avisar antes).
+3. Editar versao.json AQUI, subindo o campo "versao".
+4. Subir o arquivo para o mesmo lugar da politica de privacidade.
+
+Pronto. Quem abrir o jogo com a versao antiga ve o popup.
+
+OS CAMPOS
+---------
+versao      Versao publicada, ex.: "0.1.1". Precisa bater com o
+            "Version" do Player Settings da build que foi para a Play.
+            Comparacao e por numero: 0.1.10 e maior que 0.1.9.
+
+obrigatoria false = aparece o botao "Agora nao" e o aviso so incomoda
+            uma vez por versao.
+            true  = sem escapatoria, o popup nao fecha. USAR SO quando a
+            versao antiga realmente quebrou (ex.: save incompativel).
+
+url         Vazio = o botao abre a pagina do jogo na Play sozinho.
+            So preencher para mandar para outro lugar.
+
+novidades   Texto curto do que mudou. Aparece embaixo do numero da versao.
+            Pode deixar vazio.
+
+EXEMPLO DE AVISO NORMAL
+-----------------------
+{
+  "versao": "0.1.1",
+  "obrigatoria": false,
+  "url": "",
+  "novidades": "Agora e so tocar na casa para andar!"
+}
+
+ONDE LIGAR NO UNITY
+-------------------
+Cena Bootstrap > [Bootstrap] > VerificadorAtualizacao > campo "urlVersao".
+Enquanto esse campo estiver VAZIO, o jogo nao consulta nada e nunca mostra
+o popup. Depois de hospedar, colar aqui a URL do versao.json, algo como:
+https://SEU-USUARIO.github.io/SEU-REPO/versao.json
+
+PARA VER O POPUP SEM PUBLICAR NADA
+----------------------------------
+No mesmo componente existe o campo "jsonDeTeste". Colando um JSON ali, o
+jogo ignora a web e usa esse texto. Serve para conferir o visual.
+LIMPAR ESSE CAMPO ANTES DE GERAR A BUILD.
