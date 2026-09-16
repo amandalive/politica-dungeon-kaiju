@@ -1,6 +1,6 @@
 { 
-  "versao": "0.3.0", 
-  "obrigatoria": false, 
-  "url": "https://play.google.com/apps/internaltest/4701717052713349459", 
-  "novidades": "Tutorial refeito e introdução nova!" 
+  "versao": "0.5.0", 
+  "obrigatoria": true, 
+  "url": "https://play.google.com/store/apps/details?id=com.korrajogos.dungeonkaiju", 
+  "novidades": "Loja de bônus e 3 skins por monstro! Seleção de personagem nova em 3D." 
 }
